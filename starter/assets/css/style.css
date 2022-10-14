@@ -1,0 +1,35 @@
+.pace {
+    display: none;
+}
+
+.main-style {
+    min-height: 100vh;
+    background: url(../img/cover/cover-scrum-board.png) no-repeat fixed;
+    background-size: 360px;
+    background-position: right bottom;
+}
+
+
+
+/* .card-text{
+    text-align: left;
+    padding-left: 15px;
+} */
+.bi-question-circle{
+    color:rgb(6, 194, 6);
+}
+.bi-check-circle{
+    color:rgb(6, 194, 6);
+}
+.bi-plus{
+    color:black;
+}
+.spinner-border{
+    width:23px;
+    height:23px;
+    color:rgb(6, 194, 6);
+}
+.btn-light{
+    color:black !important; 
+    background-color: rgb(204, 198, 198);
+}
