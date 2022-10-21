@@ -9,12 +9,6 @@
     background-position: right bottom;
 }
 
-
-
-/* .card-text{
-    text-align: left;
-    padding-left: 15px;
-} */
 .bi-question-circle{
     color:rgb(6, 194, 6);
 }
@@ -32,4 +26,8 @@
 .btn-light{
     color:black !important; 
     background-color: rgb(204, 198, 198);
+}
+.scroll{
+    height: 80vh;
+    overflow-y:auto;
 }
