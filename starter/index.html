@@ -101,6 +101,7 @@
 			  <div class="modal-body ">
 				<span class="fw-bolder ">Title</span>
 			   <input id="title" type="text" class="form-control mb-2" aria-label="Text input with checkbox">
+			  <input type="hidden" id="unique">
 			   <span class="fw-bolder">Type</span>
 			   <div class="form-check mx-2">
 				<input id="radio1" value="Feature" class="form-check-input" type="radio" name="radio"checked>
@@ -134,8 +135,8 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
-				<button id="save" onclick="saveTask();" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-				<button id="update"  style="display:none"  type="button" class="btn btn-warning" data-bs-dismiss="modal">Update</button>
+				<button style="display:block" id="save" onclick="saveTask();" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+				<button id="update"  style="display:none"  type="button" class="btn btn-warning" >Update</button>
 			  </div>
 			</div>
 		</form>
