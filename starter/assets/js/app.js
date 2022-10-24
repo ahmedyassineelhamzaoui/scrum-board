@@ -14,7 +14,6 @@ const todo=document.querySelector("#todo");
 const inprogress=document.querySelector("#inprogress");
 const done=document.querySelector("#done");
 
-let unique=document.getElementById("unique");
 let todocount=document.querySelector("#todocount");
 let donecount=document.querySelector("#donecount");
 let inprogresscount=document.querySelector("#inprogresscount");
@@ -26,7 +25,7 @@ function initTaskForm() {
     todo.innerHTML="";
     inprogress.innerHTML="";
     done.innerHTML="";
-    var c=1;
+    let c=1;
     let t=0;
     let i=0;
     let d=0;
