@@ -6,9 +6,8 @@ const select2=document.querySelector("#select2");
 const date=document.querySelector("#date");
 const description=document.querySelector("#description");
 let tittlemodal=document.querySelector(".modal-title");
-
-//kef
-
+let invalidTitle=document.querySelector(".invalidTitle");
+let invalidDescr=document.querySelector(".invalidDescr");
 
 const form=document.querySelector("#form");
 const todo=document.querySelector("#todo");
@@ -31,9 +30,12 @@ function initTaskForm() {
     let t=0;
     let i=0;
     let d=0;
+    let short;
     for(let task of tasks){
     if(task.description.length>50){
-        var short=task.description.substring(0,50)+'...';
+        short=task.description.substring(0,50)+'...';
+    }else{
+        short=task.description;
     }
        if(task.status==="To Do"){
         t++;
@@ -83,7 +85,7 @@ function initTaskForm() {
          </div>
     </button>`
     c++;
-}else{
+       }else{
         d++;
         done.innerHTML +=`<button  class="w-100 py-2  d-flex  border-0 border-top" >
         <div class="mx-1 fs-3">
@@ -122,7 +124,7 @@ initTaskForm();
 }
 
 function saveTask() {
-    task={};
+    let task={};
     task = {
         'id'            :   tasks.length+1,
         'title'         :   title.value,
@@ -137,15 +139,31 @@ function saveTask() {
     }else{
         task.type="Bug";
     }
-  
-    tasks.push(task);
-    initTaskForm();
-    reloadTasks();
+    if(task.title==""){
+        invalidTitle.style.display="block";
+        invalidTitle.style.color="red";
+        title.style.border="1px solid red";
+
+
+    }if(task.description==""){
+        invalidDescr.style.display="block";
+        invalidDescr.style.color="red";
+        description.style.border="1px solid red";
+
+    }else{
+        reloadTasks();
+        tasks.push(task);
+        initTaskForm();
+        $("#modal-task").modal("hide");
+    }
+        
+   
 }
 function deleteTask(index) {
-    // tasks=tasks.filter(function(task){
-    //     return task.id!=index;
-    // });
+    let result= confirm("Are you sure to delete this task");
+    if(result==false){
+        Event.preventDefault();
+    }
     tasks.splice(index-1,1);
     initTaskForm();
 }
@@ -190,5 +208,9 @@ function editTask(e) {
 
 
 function reloadTasks() {
-    form.reset();
+        invalidTitle.style.display="none";
+        invalidDescr.style.display="none";
+        description.style.border="1px solid lightgray";
+        title.style.border="1px solid lightgray";
+        form.reset();
 }

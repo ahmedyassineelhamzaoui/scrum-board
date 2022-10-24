@@ -61,7 +61,7 @@
 						<div class="bg-dark pb-1 pt-2">
 							<h4 class="fs-5 px-2 text-light">In Progress (<span id="inprogresscount">4</span>)</h4>
 						</div>
-						<div class="scroll" id="inprogress">
+						<div class="scroll bg-white" id="inprogress">
 							<!-- IN PROGRESS TASKS HERE -->
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 						<div class="bg-dark pb-1 pt-2">
 							<h4 class="fs-5 px-2 text-light">Done (<span id="donecount">4</span>)</h4>
 						</div>
-						<div class="scroll" id="done">
+						<div class="scroll bg-white" id="done">
 							<!-- DONE TASKS HERE -->
 							
 						</div>
@@ -101,8 +101,10 @@
 			  <div class="modal-body ">
 				<span class="fw-bolder ">Title</span>
 			   <input id="title" type="text" class="form-control mb-2" aria-label="Text input with checkbox">
-			  <input type="hidden" id="unique">
-			   <span class="fw-bolder">Type</span>
+			   <div style="display:none" class="invalid-feedback invalidTitle">
+				Please enter a Title for your task 
+			  </div>
+			  <span class="fw-bolder">Type</span>
 			   <div class="form-check mx-2">
 				<input id="radio1" value="Feature" class="form-check-input" type="radio" name="radio"checked>
 				<label class="form-check-label" for="flexRadioDefault1">
@@ -132,10 +134,14 @@
 			 <input id="date" type="date" class="form-control mb-2">
              <span class="fw-bolder">Descreption</span>
 			 <textarea id="description" class="form-control" id="textArea" rows="7"></textarea>
+			 <div style="display:none" class="invalid-feedback invalidDescr">
+				Please enter a description for your task 
 			  </div>
+			</div>
+			  
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
-				<button style="display:block" id="save" onclick="saveTask();" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+				<button style="display:block" id="save" onclick="saveTask();" type="button"  class="btn btn-primary" >Save</button>
 				<button id="update"  style="display:none"  type="button" class="btn btn-warning" >Update</button>
 			  </div>
 			</div>
